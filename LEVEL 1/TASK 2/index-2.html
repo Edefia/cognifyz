@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGNIFYZ TIME</title>
+    <style>
+        .popup {
+            position: absolute;
+            left: 35%;
+            top: 40%;
+            width: 400px;
+            height: fit-content;
+            background: #FFFFFF;
+            box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 13px;
+            padding: 15px 20px;
+        }
+        #time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            gap: 15px;
+            background-color: #007ACC;
+            outline: 3px #007ACC solid;
+            outline-offset: -3px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: 400ms;
+            color: white;
+            font-size: large;
+        }
+        #time:hover {
+            background-color: transparent;
+            color: #007ACC;
+        }
+
+        #timeDisplay {
+            font-size: 18px;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h1>Click the Button for Time</h1>
+        <button id="time">Show Current Time</button>
+        <p id="timeDisplay"></p>
+        
+    </div>
+    <script>
+        document.getElementById('time').addEventListener('click', () => {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById('timeDisplay').textContent = `The Current Time is: ${currentTime}`;
+            const hours = new Date().getHours();
+            let greeting;
+
+            if (hours < 12) {
+                greeting = "Hello! Good Morning!\n\nThe time is : ";
+            } 
+            else if (hours < 16) {
+                greeting = "Hello! Good Afternoon!\n\nThe time is : ";
+            } 
+            else {
+                greeting = "Hello! Good Evening!\n\nThe time is : ";
+            }
+
+            alert(greeting + currentTime);
+
+        });
+    </script>
+</body>
+</html>
