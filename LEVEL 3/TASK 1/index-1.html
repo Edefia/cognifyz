@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COGNIFYZ Gallery</title>
+  <link rel="stylesheet" href="style-1.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo" onclick="window.location.href='https://cognifyz.com/'">iDON Gallery</div>
+    <ul class="menu">
+        <li ><a href="https://cognifyz.com/">Home</a></li>
+        <li ><a href="https://cognifyz.com/about-us/">About</a></li>
+        <li ><a href="https://cognifyz.com/services/">Services</a></li>
+        <li ><a href="https://cognifyz.com/contact-us/">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="alert('This is Just a demo for the assignment\nSo i didnt add any function')">☰</div>
+</nav>
+  <div class="container">
+    <h1>iDON Gallery</h1>
+    <div class="line"></div>
+    <div class="gallery">
+      
+      <img src="../images/Mama Africa.jpeg" alt="Mama Africa">
+      <img src="../images/Airbus.jpeg" alt="Airbus">      
+      <img src="../images/Like Davido.jpeg" alt="Like Davido">
+      <img src="../images/Monkey Farm.jpeg" alt="Monkey Farm">
+      <img src="../images/m4.jpeg" alt="My Photo Shoot">
+      <img src="../images/BMW.jpeg" alt="sunset">
+      <img src="../images/me1.jpeg" alt="My Photo Shoot">
+      
+      <img src="../images/me2.jpeg" alt="My Photo Shoot">
+      <img src="../images/me3.jpeg" alt="My Photo Shoot">
+      <img src="../images/me5.jpeg" alt="My Photo Shoot">
+      <img src="../images/sunset.jpeg" alt="My Photo Shoot">
+      <img src="../images/me6.jpeg" alt="My Photo Shoot">
+      <img src="../images/me7.jpeg" alt="My Photo Shoot">
+      <img src="../images/me8.jpeg" alt="My Photo Shoot">
+      
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <img id="modalImage" alt="Large Image">
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(image => {
+      image.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImage.src = image.src;
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
